@@ -1,3 +1,4 @@
+
 # Open Share
 
 Secure, LAN-first, device-to-device file sharing with an optional registration server for device management.
@@ -29,6 +30,7 @@ Open Share is a privacy-first, LAN-first file sharing solution designed to move 
 ---
 
 ## Goals & non-goals
+<a id="goals--non-goals"></a>
 
 **Goals**
 
@@ -56,6 +58,7 @@ Notes: The client is designed to be portable — consider Tauri or a small GUI w
 ---
 
 ## Quick start — dev (minimal)
+<a id="quick-start--dev-minimal"></a>
 
 This assumes you have Rust and Python/Django environment available.
 
@@ -100,6 +103,7 @@ Response should include `cert_blob` and `trust_root`.
 ---
 
 ## High-level design & responsibilities
+<a id="high-level-design--responsibilities"></a>
 
 (Short, human-readable summary — full diagrams & flows live in `ARCHITECTURE.md` and `docs/diagrams.md`.)
 
@@ -138,6 +142,7 @@ For diagrammed, step-by-step flows see `docs/diagrams.md`.
 ---
 
 ## API summary & device certificate format
+<a id="api-summary--device-certificate-format"></a>
 
 Full API reference belongs in `docs/api.md` (create when server models stabilize). Below is a concise, practical summary.
 
@@ -227,6 +232,7 @@ Acceptance targets (examples):
 ---
 
 ## How to contribute & contacts
+<a id="how-to-contribute--contacts"></a>
 
 * Fork → feature branch → PR → review. Add tests for network and crypto flows.
 * Issues: tag with `bug`, `proposal`, `spec`, `security`.

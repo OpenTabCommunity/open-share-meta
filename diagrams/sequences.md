@@ -15,11 +15,9 @@ sequenceDiagram
 
   U->>D: Launch registration flow (UI)
   D->>D: Generate Ed25519 keypair (identity)
-  D->>S: POST /v1/device/register {
-    device_id, account_id, pubkey_ed25519, metadata
-  }
+  D->>S: POST /v1/device/register { device_id account_id pubkey_ed25519 metadata }
   S-->>D: 201 Created { cert_blob }
-  D->>D: Store private key in secure store; cache cert & trustroot
+  D->>D: Store private key in secure store cache cert & trustroot
   Note right of D: Device ready. Cert expiry set (e.g. 12 months)
 ```
 

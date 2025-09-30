@@ -9,17 +9,17 @@ This document contains an enhanced component diagram showing the internal module
 
 ```mermaid
 flowchart TB
-  subgraph Client[Device Client (Rust core)]
-    UI[UI / UX Layer\n(choices: CLI/GUI/Tauri)]
-    Disc[Discovery Module\n(mDNS + broadcast listener)]
-    Pair[Pairing Module\n(QR, manual, TOFU)]
-    KM[Key Management\n(Ed25519 identity, secure enclave)]
-    Crypto[Crypto Suite\n(Ed25519/X25519/HKDF/AEAD)]
-    Transport[Transport Layer\n(QUIC primary, TLS fallback)]
-    Store[Storage\n(chunk cache, manifests)]
+  subgraph Client[Device Client with Rust core]
+    UI[UI / UX Layer choices: CLI/GUI/Tauri]
+    Disc[Discovery Module mDNS + broadcast listener]
+    Pair[Pairing Module QR, manual, TOFU]
+    KM[Key Management Ed25519 identity, secure enclave]
+    Crypto[Crypto Suite Ed25519/X25519/HKDF/AEAD]
+    Transport[Transport Layer QUIC primary, TLS fallback]
+    Store[Storage chunk cache, manifests]
   end
 
-  subgraph Server[Registration Server (Django)]
+  subgraph Server[Registration Server Django]
     Auth[Auth & Accounts]
     API[HTTP API: /device/register, /crl, /trustroot]
     DB[Database: device metadata, audit logs]

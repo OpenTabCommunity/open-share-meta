@@ -11,17 +11,17 @@ This page contains a focused, enhanced high-level architecture diagram for **Ope
 flowchart LR
   subgraph LAN[Local Network]
     direction TB
-    A[Device A\n(User: Alice)]
-    B[Device B\n(User: Bob)]
-    MDNS[mDNS / Local Discovery\n(multicast TXT records)]
+    A[Device A User: Alice]
+    B[Device B User: Bob]
+    MDNS[mDNS / Local Discovery multicast TXT records]
     subgraph LOCAL_TRAFFIC[Local P2P Path]
       style LOCAL_TRAFFIC stroke-dasharray: 5 5
       A -- "P2P encrypted channel (QUIC/TLS)" --- B
     end
   end
 
-  RS[Registration Server\n(Django)\n(public certs, CRL)]
-  Relay[Optional Relay/Turn\n(opt-in, stateless tunnel)]
+  RS[Registration Server Django public certs, CRL]
+  Relay[Optional Relay-Turn opt-in, stateless tunnel]
 
   A -->|announce/discover| MDNS
   B -->|announce/discover| MDNS
@@ -29,8 +29,8 @@ flowchart LR
   A -->|POST /device/register| RS
   B -->|POST /device/register| RS
 
-  RS -->|issue cert_blob (signed)| A
-  RS -->|issue cert_blob (signed)| B
+  RS -->|issue cert_blob signed| A
+  RS -->|issue cert_blob signed| B
 
   Relay -.-> A
   Relay -.-> B

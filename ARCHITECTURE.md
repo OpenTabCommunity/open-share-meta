@@ -47,7 +47,7 @@ graph LR
     MDNS[mDNS / Local Discovery]
   end
   RS[Registration Server]
-  Relay[Optional Relay/Turn (opt-in)]
+  Relay[Optional Relay-Turn] 
 
   User -->|Uses| A
   User -->|Uses| B
